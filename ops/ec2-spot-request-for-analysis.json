@@ -1,0 +1,25 @@
+{
+  "IamFleetRole": "arn:aws:iam::074145640974:role/aws-ec2-spot-fleet-tagging-role",
+  "AllocationStrategy": "lowestPrice",
+  "TargetCapacity": 1,
+  "SpotPrice": "0.7",
+  "ValidFrom": "2021-01-24T15:11:08Z",
+  "ValidUntil": "2022-01-24T15:11:08Z",
+  "TerminateInstancesWithExpiration": true,
+  "LaunchSpecifications": [],
+  "Type": "request",
+  "LaunchTemplateConfigs": [
+    {
+      "LaunchTemplateSpecification": {
+        "LaunchTemplateId": "lt-013bcb746fb0f6924",
+	"Version": "7"
+      },
+      "Overrides": [
+        {
+          "InstanceType": "g4dn.2xlarge",
+          "WeightedCapacity": 1
+        }
+      ]
+    }
+  ]
+}
