@@ -89,6 +89,3 @@ echo "home volume attached"
 ssh -i ~/.ssh/images.pem ubuntu@$PUBLIC_DNS 'sudo mount /dev/nvme3n1 /home'
 echo "home volume mounted"
 
-#3. Allocates elastic IP to this instance
-#4. Install JumpCloud user agent
-#5. Adds the system to Earth Observation JumpCloud groupx
