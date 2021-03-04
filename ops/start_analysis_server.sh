@@ -67,6 +67,7 @@ until [ "${DATA_STATE}" == "attached" ]; do
   sleep 10
 done
 echo "storage volume attached"
+sleep 90
 ssh -i ~/.ssh/images.pem ubuntu@$PUBLIC_DNS 'sudo mount /dev/nvme2n1 /mnt/uksa-storage'
 echo "storage volume mounted"
 
@@ -88,4 +89,11 @@ done
 echo "home volume attached"
 ssh -i ~/.ssh/images.pem ubuntu@$PUBLIC_DNS 'sudo mount /dev/nvme3n1 /home'
 echo "home volume mounted"
+
+
+# grant write permissions to Pablo and Pierre Louis
+ssh -i ~/.ssh/images.pem ubuntu@$PUBLIC_DNS 'sudo chmod -R 777 /home/pablo'
+ssh -i ~/.ssh/images.pem ubuntu@$PUBLIC_DNS 'sudo chmod -R 777 /home/pierre-louis'
+
+
 
