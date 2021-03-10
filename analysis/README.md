@@ -2,12 +2,11 @@
 ```bash
 ssh -i path_to_creds.pem ubuntu@ec2-15-188-135-192.eu-west-3.compute.amazonaws.com   
 ```
-ssh -i /Users/pablo/vivid_new/aws/ec2_acc.pem ubuntu@ec2-15-188-135-192.eu-west-3.compute.amazonaws.com   
 
 ### Start jupyter notebook inside the analysis server
 log to your user name
 ```
-cd /home/pablo/forest_mind/analysis/static_dri 
+cd /home/pablo/forest_mind/analysis/ 
 jupyter notebook
 ```
 # On another terminal on the server
@@ -15,7 +14,10 @@ jupyter notebook
 jupyter notebook list # get token
 ```
 get token returned
+Check the port where the notebook is read 
+
 # Listen to jupyter on local port 8881 - run locally
+Might need to change the port from 8888 to the one identified above
 ```
 ssh -i path_to_ec2_acc.pem -f -N -L 8881:localhost:8888 ubuntu@ec2-15-188-135-192.eu-west-3.compute.amazonaws.com  
 ```
